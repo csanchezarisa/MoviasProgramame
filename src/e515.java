@@ -6,8 +6,10 @@ public class e515 {
     public static void main(String[] args) throws IOException {
         BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
 
+        int numeroCopas;
+
         do {
-            int numeroCopas = Integer.parseInt(teclado.readLine());
+            numeroCopas = Integer.parseInt(teclado.readLine());
 
             if (numeroCopas == 0)
                 break;
@@ -17,10 +19,15 @@ public class e515 {
             while (numeroCopas > 0) {
                 viajes++;
                 numeroCopas--;
-                if (numeroCopas % 2 == 0)
-                    numeroCopas -= 2;
-                else
-                    numeroCopas--;
+
+                if (numeroCopas > 0) {
+                    if (numeroCopas % 2 == 0)
+                        numeroCopas -= 2;
+                    else
+                        numeroCopas--;
+
+                    viajes++;
+                }
             }
 
             System.out.println(viajes);
